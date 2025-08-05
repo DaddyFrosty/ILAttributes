@@ -240,7 +240,7 @@ namespace ILAttributes.CodeGen
                                             {
                                                 HasThis = true
                                             };
-                                            if (!converter.IsGenericInstance)
+                                            if ( methodDefinition.GenericParameters.Count > converter.GenericParameterCount )
                                             {
                                                 var genericParameters = methodDefinition.GenericParameters;
                                                 var genericMethod = new GenericInstanceMethod(method);
