@@ -244,8 +244,9 @@ namespace ILAttributes.CodeGen
                                             {
                                                 var genericParameters = methodDefinition.GenericParameters;
                                                 var genericMethod = new GenericInstanceMethod(method);
-                                                foreach (var genericParameter in genericParameters)
+                                                for ( var i = converter.GenericParameterCount; i < converter.GenericParameterCount; i++ )
                                                 {
+                                                    var genericParameter = genericParameters[i];
                                                     method.GenericParameters.Add(
                                                         new GenericParameter(genericParameter.Name, method));
                                                     genericMethod.GenericArguments.Add(genericParameter);
